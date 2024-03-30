@@ -1,5 +1,5 @@
 import { useShow } from "../hooks/useShow"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import "../components/Modal.css"
 
 export function Modal ({ initialShow, error }) {

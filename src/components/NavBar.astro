@@ -1,57 +1,58 @@
 ---
-import { Image } from "astro:assets";
-import logoIMG from ".../../public/img/360.webp";
+import { Image } from 'astro:assets'
+import logoIMG from '/img/360.webp'
 ---
 
 <header>
   <nav>
-    <a href="/">
-      <Image
-        src={logoIMG}
-        class="logo"
-        alt="logo TRK"
-        format="avif"
-        quality={"mid"}
-      />
+    <a href='/'>
+      <img src={'/img/360.webp'} class='logo' alt='logo TRK' />
+      <!-- <Image
+        src={'/img/360.webp'}
+        class='logo'
+        alt='logo TRK'
+        format='avif'
+        quality={'mid'}
+      /> -->
     </a>
 
-    <div class="navigation">
-      <div class="nav-items">
-        <i class="uil uil-times nav-close-btn"></i>
+    <div class='navigation'>
+      <div class='nav-items'>
+        <i class='uil uil-times nav-close-btn'></i>
 
-        <a href="#inicio"><i class="uil uil-home"></i> Inicio</a>
-        <a href="#about"><i class="uil uil-info-circle"></i> Nosotros</a>
-        <a href="#services"><i class="uil uil-compass"></i> Servicios</a>
-        <a href="#projects"
-          ><i class="uil uil-document-layout-left"></i> Portafolio</a
+        <a href='#inicio'><i class='uil uil-home'></i> Inicio</a>
+        <a href='#about'><i class='uil uil-info-circle'></i> Nosotros</a>
+        <a href='#services'><i class='uil uil-compass'></i> Servicios</a>
+        <a href='#projects'
+          ><i class='uil uil-document-layout-left'></i> Portafolio</a
         >
-        <a href="#allies"><i class="uil uil-head-side"></i> Aliados</a>
-        <a href="#contact"><i class="uil uil-envelope"></i> Contacto</a>
+        <a href='#allies'><i class='uil uil-head-side'></i> Aliados</a>
+        <a href='#contact'><i class='uil uil-envelope'></i> Contacto</a>
       </div>
     </div>
 
-    <i class="uil uil-apps nav-menu-btn"></i>
+    <i class='uil uil-apps nav-menu-btn'></i>
   </nav>
 </header>
 
 <script>
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    header?.classList.toggle("sticky", window.scrollY > 0);
-  });
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header')
+    header?.classList.toggle('sticky', window.scrollY > 0)
+  })
 
   //Responsive Nav Menu
-  const menuBtn = document.querySelector(".nav-menu-btn");
-  const closeBtn = document.querySelector(".nav-close-btn");
-  const navigation = document.querySelector(".navigation");
+  const menuBtn = document.querySelector('.nav-menu-btn')
+  const closeBtn = document.querySelector('.nav-close-btn')
+  const navigation = document.querySelector('.navigation')
 
-  menuBtn?.addEventListener("click", () => {
-    navigation?.classList.add("active");
-  });
+  menuBtn?.addEventListener('click', () => {
+    navigation?.classList.add('active')
+  })
 
-  closeBtn?.addEventListener("click", () => {
-    navigation?.classList.remove("active");
-  });
+  closeBtn?.addEventListener('click', () => {
+    navigation?.classList.remove('active')
+  })
 </script>
 
 <style>
@@ -102,7 +103,7 @@ import logoIMG from ".../../public/img/360.webp";
     font-size: 1rem;
     text-decoration: none;
     text-shadow: var(--text-shadow);
-    transition: .5s ease;
+    transition: 0.5s ease;
     transition-delay: 0.1s;
   }
 
