@@ -37,7 +37,7 @@ export function ContactForm() {
         })
 
         try {
-            const res = await fetch("api/sendEmail.json", {
+            const res = await fetch("/api/sendEmail.json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
