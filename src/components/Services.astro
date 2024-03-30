@@ -1,0 +1,212 @@
+---
+
+---
+
+<section class="services" id="services">
+  <div>
+    <h2>Nuestros Servicios</h2>
+  </div>
+  <div class="main-services">
+    <div class="services-container">
+      <div class="box" style="--clr:#F7ED2E;">
+        <div class="content">
+          <div class="icon">
+            <i class="uil uil-palette"></i>
+          </div>
+          <div class="text">
+            <h3>Diseño</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="box" style="--clr:#F7ED2E;">
+        <div class="content">
+          <div class="icon">
+            <i class="uil uil-megaphone"></i>
+          </div>
+          <div class="text">
+            <h3>Anuncios</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box" style="--clr:#F7ED2E;">
+        <div class="content">
+          <div class="icon">
+            <i class="uil uil-rocket"></i>
+          </div>
+          <div class="text">
+            <h3>Asesoria</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    margin: 2rem 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .services h2 {
+    text-align: center;
+    padding-top: 10%;
+    color: var(--footer-color);
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    position: relative;
+  }
+
+  .services h2::after {
+    position: absolute;
+    content: "";
+    background-color: var(--third-color);
+    width: 15%;
+    height: 5px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .main-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  .services-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 0;
+    gap: 60px;
+  }
+
+  .services-container .box {
+    position: relative;
+    height: 350px;
+    width: 300px;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow-elevation-medium);
+  }
+
+  .services-container .box::before {
+    content: "";
+    position: absolute;
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    border-bottom: 4px solid var(--clr);
+    z-index: -1;
+    overflow: hidden;
+    transform: skewY(15deg);
+    transition: 0.5s ease-in-out;
+  }
+
+  .services-container .box:hover:before {
+    transform: skewY(0deg);
+    inset: -10px 40px;
+  }
+
+  .services-container .box .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .services-container .box .content .icon {
+    color: var(--clr);
+    width: 80px;
+    height: 80px;
+    box-shadow:
+      0 0 0 4px var(--bg-color),
+      0 0 0 6px var(--clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    background: var(--bg-color);
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .services-container .box:hover .content .icon {
+    background: var(--clr);
+    color: var(--bg-color);
+    box-shadow:
+      0 0 0 4px var(--bg-color),
+      0 0 0 300px var(--clr);
+  }
+
+  .services-container .box .content .text h3 {
+    font-size: 1.5em;
+    color: var(--footer-color);
+    font-weight: 700;
+    transition: 0.5s ease-in-out;
+  }
+
+  .services-container .box:hover .content .text h3 {
+    color: var(--footer-color);
+  }
+
+  .services-container .box .content .text p {
+    color: #999;
+    transition: 0.5s ease-in-out;
+  }
+
+  .services-container .box:hover .content .text p {
+    color: #2e2e2e;
+  }
+
+  .services-container .box .content .text a {
+    position: relative;
+    background: var(--clr);
+    color: var(--bg-color);
+    padding: 8px 15px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .services-container .box:hover .content .text a {
+    background: var(--bg-color);
+    color: var(--clr);
+  }
+
+  @media (max-width: 600px) {
+    .services h2 {
+      font-size: 3rem;
+    }
+  }
+</style>

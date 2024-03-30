@@ -1,0 +1,593 @@
+---
+import splahIMG from '../../public/img/splash.webp'
+import heroIMG from '../../public/img/im1.png'
+import { Image } from 'astro:assets'
+import { MultiText } from '../components/MultiText.jsx'
+---
+
+<section class='inicio' id='inicio'>
+  <div class='media-icons right-pos'>
+    <a href=''><i class='uil uil-facebook-f dark'></i></a>
+    <a href=''><i class='uil uil-instagram dark'></i></a>
+    <a href=''><i class='uil uil-linkedin dark'></i></a>
+    <a href=''
+      ><svg
+        class='icon icon-tabler icon-tabler-brand-tiktok-filled dark'
+        viewBox='0 0 24 24'
+        stroke-width='1.5'
+        stroke='currentColor'
+        fill='none'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        ><path stroke='none' d='M0 0h24v24H0z' fill='none'></path><path
+          d='M16.083 2h-4.083a1 1 0 0 0 -1 1v11.5a1.5 1.5 0 1 1 -2.519 -1.1l.12 -.1a1 1 0 0 0 .399 -.8v-4.326a1 1 0 0 0 -1.23 -.974a7.5 7.5 0 0 0 1.73 14.8l.243 -.005a7.5 7.5 0 0 0 7.257 -7.495v-2.7l.311 .153c1.122 .53 2.333 .868 3.59 .993a1 1 0 0 0 1.099 -.996v-4.033a1 1 0 0 0 -.834 -.986a5.005 5.005 0 0 1 -4.097 -4.096a1 1 0 0 0 -.986 -.835z'
+          stroke-width='0'
+          fill='currentColor'></path></svg
+      ></a
+    >
+  </div>
+  <div class='wrapper'>
+    <div class='cols cols0'>
+      <span class='topline'>Bienvenido</span>
+      <h1>a <MultiText client:visible /></h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste deleniti
+        vel, alias ea magnam tempora doloremque modi eligendi ipsam iure
+        consequatur distinctio iusto aperiam maiores. Facilis at tempore iste
+        cum!
+      </p>
+      <div class='btns'>
+        <a> Conóce más</a>
+        <a> Contáctanos!</a>
+      </div>
+    </div>
+    <div class='cols cols1'>
+      <div class='imgbox'>
+        <Image
+          src={splahIMG}
+          alt='Splash Layout'
+          id='splash'
+          format='avif'
+          quality={'mid'}
+        />
+        <Image
+          src={heroIMG}
+          alt='Imagen Layout TRK'
+          format='avif'
+          quality={'high'}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .inicio {
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    height: calc(130vh - 80px);
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 777;
+    position: relative;
+  }
+
+  .wrapper::before {
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: -15%;
+    top: 25%;
+    background: linear-gradient(45deg, var(--bg-color), var(--fourth-color));
+    animation: object1 6s linear infinite;
+  }
+
+  .wrapper::after {
+    position: absolute;
+    content: '';
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 35%;
+    top: 12%;
+    background: linear-gradient(45deg, var(--bg-color), var(--fourth-color));
+    animation: object2 6s linear infinite;
+  }
+
+  @keyframes object1 {
+    50% {
+      left: -12%;
+      top: 30%;
+    }
+  }
+
+  @keyframes object2 {
+    50% {
+      left: 36%;
+      top: 8%;
+    }
+  }
+
+  .wrapper .cols {
+    width: 50%;
+  }
+
+  .cols0 {
+    width: 60%;
+    z-index: 5;
+  }
+
+  .topline {
+    display: block;
+    position: relative;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: var(--footer-color);
+  }
+
+  .topline::after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 45px;
+    bottom: 10px;
+    background-color: var(--fourth-color);
+  }
+
+  .cols h1 {
+    display: block;
+    font-size: 4.7em;
+    font-weight: 900;
+    color: var(--footer-color);
+    text-wrap: balance;
+  }
+
+  .multiText {
+    color: var(--footer-color);
+    text-transform: capitalize;
+  }
+
+  .cols p {
+    display: block;
+    width: 90%;
+    font-size: 1.2em;
+    color: var(--footer-color);
+    text-wrap: pretty;
+  }
+
+  .btns {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .btns a {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--bg-color);
+    background-color: var(--footer-color);
+    padding: 8px 10px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    box-shadow: var(--shadow-elevation-medium);
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+
+  .btns a:hover {
+    background: transparent;
+    border: 1px solid white;
+    color: var(--footer-color);
+    transition: 0.3ms ease all;
+  }
+
+  .imgbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .imgbox img {
+    position: relative;
+    height: 105%;
+    width: calc(105% - 80px);
+    top: -50px;
+    right: 30px;
+    animation: animateUser 4s linear infinite;
+    mask-image: linear-gradient(black 90%, transparent);
+  }
+
+  @keyframes animateUser {
+    50% {
+      right: 10px;
+      top: -20px;
+    }
+  }
+
+  .imgbox #splash {
+    position: absolute;
+    top: -10%;
+    right: 30px;
+    /* transform: translate(-50%, -50%) rotate(-35deg); */
+    width: calc(105% - 80px);
+    /* width: 160%; */
+    filter: saturate(200%);
+    animation: animate 4s linear infinite;
+  }
+
+  @keyframes animate {
+    50% {
+      top: -1%;
+      right: 50px;
+      width: 105%;
+    }
+  }
+
+  .right-pos {
+    right: 0;
+    margin-right: 50px;
+    z-index: 10;
+  }
+
+  .dark {
+    color: var(--footer-color);
+    transition: 0.5s ease;
+    transition-delay: 0.1s;
+    z-index: 10;
+  }
+
+  .dark:hover {
+    color: var(--fourth-color);
+  }
+
+  .media-icons {
+    z-index: 888;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 90px;
+  }
+
+  .media-icons a {
+    color: var(--bg-color);
+    font-size: 1.7em;
+    margin: 10px 0;
+  }
+
+  .media-icons a:hover {
+    color: var(--third-color);
+  }
+
+  @media (max-width: 1100px) {
+    .media-icons {
+      right: 0;
+      margin-right: 50px;
+    }
+
+    .wrapper {
+      height: calc(90vh - 80px);
+      top: 50px;
+    }
+
+    .wrapper::before {
+      height: 300px;
+      width: 300px;
+      top: 100px;
+      animation: object1 6s linear infinite;
+    }
+
+    @keyframes object1 {
+      50% {
+        left: -12%;
+        top: 150px;
+      }
+    }
+
+    .wrapper::after {
+      height: 80px;
+      width: 80px;
+      top: 10%;
+      animation: object2 6s linear infinite;
+    }
+
+    @keyframes object2 {
+      50% {
+        left: 36%;
+        top: 5%;
+      }
+    }
+
+    .wrapper .cols {
+      width: 130%;
+    }
+
+    .cols0 {
+      width: 100%;
+    }
+
+    .topline {
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+
+    .topline::after {
+      height: 4px;
+      width: 35px;
+      bottom: 8px;
+    }
+
+    .cols h1 {
+      font-size: 2.8em;
+      font-weight: 900;
+    }
+
+    .cols p {
+      width: 90%;
+      font-size: 1em;
+    }
+
+    .imgbox {
+      text-align: center;
+    }
+
+    .imgbox img {
+      height: auto;
+      width: 300px;
+      top: -1px;
+      right: 0px;
+      animation: animateUser 4s linear infinite;
+    }
+
+    @keyframes animateUser {
+      50% {
+        right: 10px;
+        top: -10px;
+      }
+    }
+
+    .imgbox #splash {
+      top: -1px;
+      right: 50px;
+      width: 300px;
+      animation: animate 4s linear infinite;
+    }
+
+    @keyframes animate {
+      50% {
+        top: -10px;
+        right: 40px;
+        width: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 840px) {
+    .btns {
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+  }
+
+  @media (max-width: 785px) {
+    .media-icons {
+      margin-right: 20px;
+    }
+
+    .media-icons a {
+      font-size: 1.5em;
+    }
+
+    .wrapper {
+      height: calc(90vh - 80px);
+      top: 20px;
+    }
+
+    .wrapper::before {
+      height: 150px;
+      width: 150px;
+      top: 150px;
+      animation: object1 6s linear infinite;
+    }
+
+    @keyframes object1 {
+      50% {
+        left: -12%;
+        top: 180px;
+      }
+    }
+
+    .wrapper::after {
+      height: 60px;
+      width: 60px;
+      top: 1%;
+      animation: object2 6s linear infinite;
+    }
+
+    @keyframes object2 {
+      50% {
+        left: 36%;
+        top: 8%;
+      }
+    }
+
+    .wrapper .cols {
+      width: 100%;
+    }
+
+    .cols0 {
+      width: 200%;
+    }
+
+    .topline {
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+
+    .topline::after {
+      height: 5px;
+      width: 40px;
+      bottom: 7px;
+    }
+
+    .cols h1 {
+      font-size: 1.2em;
+      font-weight: 900;
+    }
+
+    .cols p {
+      width: 100%;
+      font-size: 0.7em;
+    }
+
+    .imgbox {
+      text-align: center;
+    }
+
+    .imgbox img {
+      height: auto;
+      width: 150px;
+      top: -50px;
+      right: 0px;
+      animation: animateUser 4s linear infinite;
+    }
+
+    @keyframes animateUser {
+      50% {
+        right: 5px;
+        top: -10px;
+      }
+    }
+
+    .imgbox #splash {
+      top: -1px;
+      right: 50px;
+      width: 150px;
+      animation: animate 4s linear infinite;
+    }
+
+    @keyframes animate {
+      50% {
+        top: -10px;
+        right: 40px;
+        width: 120px;
+      }
+    }
+  }
+
+  @media (max-width: 475px) {
+    .wrapper {
+      height: calc(90vh - 80px);
+      top: 20px;
+    }
+
+    .wrapper::before {
+      height: 150px;
+      width: 150px;
+      top: 150px;
+      animation: object1 6s linear infinite;
+    }
+
+    @keyframes object1 {
+      50% {
+        left: -12%;
+        top: 180px;
+      }
+    }
+
+    .wrapper::after {
+      height: 60px;
+      width: 60px;
+      top: 1%;
+      animation: object2 6s linear infinite;
+    }
+
+    @keyframes object2 {
+      50% {
+        left: 36%;
+        top: 8%;
+      }
+    }
+
+    .wrapper .cols {
+      width: 100%;
+    }
+
+    .cols0 {
+      width: 200%;
+    }
+
+    .topline {
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+
+    .topline::after {
+      height: 5px;
+      width: 40px;
+      bottom: 7px;
+    }
+
+    .cols h1 {
+      font-size: 1.2em;
+      font-weight: 900;
+    }
+
+    .cols p {
+      width: 100%;
+      font-size: 0.7em;
+    }
+
+    .btns a {
+      font-size: 0.8rem;
+    }
+
+    .imgbox {
+      text-align: center;
+    }
+
+    .imgbox img {
+      height: auto;
+      width: 150px;
+      top: -50px;
+      right: 0px;
+      animation: animateUser 4s linear infinite;
+    }
+
+    @keyframes animateUser {
+      50% {
+        right: 5px;
+        top: -10px;
+      }
+    }
+
+    .imgbox #splash {
+      top: -1px;
+      right: 50px;
+      width: 150px;
+      animation: animate 4s linear infinite;
+    }
+
+    @keyframes animate {
+      50% {
+        top: -10px;
+        right: 40px;
+        width: 120px;
+      }
+    }
+  }
+</style>

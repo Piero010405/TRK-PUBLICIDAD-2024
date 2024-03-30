@@ -1,0 +1,216 @@
+---
+import { Image } from "astro:assets";
+import logoIMG from ".../../public/img/360.webp";
+---
+
+<header>
+  <nav>
+    <a href="/">
+      <Image
+        src={logoIMG}
+        class="logo"
+        alt="logo TRK"
+        format="avif"
+        quality={"mid"}
+      />
+    </a>
+
+    <div class="navigation">
+      <div class="nav-items">
+        <i class="uil uil-times nav-close-btn"></i>
+
+        <a href="#inicio"><i class="uil uil-home"></i> Inicio</a>
+        <a href="#about"><i class="uil uil-info-circle"></i> Nosotros</a>
+        <a href="#services"><i class="uil uil-compass"></i> Servicios</a>
+        <a href="#projects"
+          ><i class="uil uil-document-layout-left"></i> Portafolio</a
+        >
+        <a href="#allies"><i class="uil uil-head-side"></i> Aliados</a>
+        <a href="#contact"><i class="uil uil-envelope"></i> Contacto</a>
+      </div>
+    </div>
+
+    <i class="uil uil-apps nav-menu-btn"></i>
+  </nav>
+</header>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    header?.classList.toggle("sticky", window.scrollY > 0);
+  });
+
+  //Responsive Nav Menu
+  const menuBtn = document.querySelector(".nav-menu-btn");
+  const closeBtn = document.querySelector(".nav-close-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn?.addEventListener("click", () => {
+    navigation?.classList.add("active");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    navigation?.classList.remove("active");
+  });
+</script>
+
+<style>
+  header {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: calc(5rem + 1rem);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    transition-property: height, background;
+  }
+
+  header.sticky {
+    height: calc(2.5rem + 1rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  header nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    transition: 0.3s ease;
+  }
+
+  .nav-close-btn,
+  .nav-menu-btn {
+    display: none;
+  }
+
+  nav .logo {
+    position: relative;
+    width: 5rem;
+    height: auto;
+  }
+
+  .navigation .nav-items a {
+    color: var(--footer-color);
+    font-size: 1rem;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+    transition: .5s ease;
+    transition-delay: 0.1s;
+  }
+
+  .navigation .nav-items a:hover {
+    color: var(--navigation-item-hover-color);
+    text-decoration-line: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .nav-items > a.actual {
+    color: var(--navigation-item-hover-color);
+    text-decoration-line: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .navigation .nav-items a i {
+    display: none;
+  }
+
+  .navigation .nav-items a:not(:last-child) {
+    margin-right: 45px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    header nav {
+      padding: 0 50px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    header nav {
+      padding: 25px 20px;
+    }
+
+    .nav-menu-btn {
+      display: block;
+      color: var(--bg-color);
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    .nav-close-btn {
+      display: block;
+      color: var(--dark-color);
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.3em;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .navigation {
+      z-index: 99999;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .navigation.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .navigation .nav-items {
+      position: relative;
+      background: var(--bg-color);
+      width: 400px;
+      max-width: 400px;
+      display: grid;
+      place-content: center;
+      margin: 20px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: var(--box-shadow-3);
+      transform: translateY(-200px);
+      transition: 0.3s ease;
+    }
+
+    .navigation.active .nav-items {
+      transform: translateY(0);
+    }
+
+    .navigation .nav-items a {
+      color: var(--dark-color);
+      font-size: 1em;
+      margin: 15px 50px;
+      transition: 0.3s ease;
+    }
+
+    .navigation .nav-items a:hover {
+      color: var(--navigation-item-hover-color);
+    }
+
+    .navigation .nav-items a i {
+      display: inline-block;
+      font-size: 1.3em;
+      margin-right: 5px;
+    }
+  }
+</style>

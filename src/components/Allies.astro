@@ -1,0 +1,273 @@
+---
+import { Image } from 'astro:assets'
+import slider1IMG from '../../public/img/mapfre1.avif'
+import slider2IMG from '../../public/img/mapfre2.avif'
+import slider3IMG from '../../public/img/logo3.avif'
+import slider4IMG from '../../public/img/logo4.avif'
+import slider5IMG from '../../public/img/logo5.avif'
+import slider6IMG from '../../public/img/logo6.avif'
+
+import splashIMG from '../../public/img/splash4.webp'
+import sliderIMG from '../../public/img/im3.avif'
+---
+
+<section class='allies' id='allies'>
+  <article class='main-allies'>
+    <div class='allies-text'>
+      <h2>Nuestros Aliados</h2>
+      <div class='logos'>
+        <div class='logos-slide'>
+          <Image
+            src={slider1IMG}
+            alt='allies logo 1'
+            format='avif'
+            quality={'mid'}
+          />
+          <Image
+            src={slider2IMG}
+            alt='allies logo 2'
+            format='avif'
+            quality={'mid'}
+          />
+          <Image
+            src={slider3IMG}
+            alt='allies logo 3'
+            format='avif'
+            quality={'mid'}
+          />
+          <Image
+            src={slider4IMG}
+            alt='allies logo 4'
+            format='avif'
+            quality={'mid'}
+          />
+          <Image
+            src={slider5IMG}
+            alt='allies logo 5'
+            format='avif'
+            quality={'mid'}
+          />
+          <Image
+            src={slider6IMG}
+            alt='allies logo 6'
+            format='avif'
+            quality={'mid'}
+          />
+        </div>
+      </div>
+    </div>
+    <div class='imgbox'>
+      <Image
+        src={sliderIMG}
+        alt='trk worker image'
+        format='avif'
+        quality={'mid'}
+      />
+      <Image
+        src={splashIMG}
+        alt='splash image background'
+        id='splash3'
+        format='avif'
+        quality={'mid'}
+      />
+    </div>
+  </article>
+</section>
+
+<script>
+  var copy = document.querySelector('.logos-slide')?.cloneNode(true)
+
+  if (copy) {
+    document.querySelector('.logos')?.appendChild(copy)
+  }
+</script>
+
+<style>
+  .allies {
+    width: 100%;
+    padding: 78px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 70px;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+  .main-allies {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .allies-text {
+    flex: 1;
+    max-width: 550px;
+    padding-bottom: 0 20px;
+    position: relative;
+  }
+
+  .allies-text h2 {
+    color: var(--footer-color);
+    font-size: 4rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 900;
+    display: block;
+    position: relative;
+  }
+
+  .allies-text h2::after {
+    position: absolute;
+    content: '';
+    height: 4%;
+    width: 8%;
+    bottom: 5%;
+    background-color: var(--third-color);
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .logos {
+    overflow: hidden;
+    padding: 30px 0;
+    white-space: nowrap;
+    background-color: var(--bg-color);
+    position: relative;
+  }
+
+  .logos::before,
+  .logos::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .logos::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+
+  .logos-slide {
+    display: inline-block;
+    animation: 20s slide infinite linear;
+  }
+
+  .logos-slide img {
+    height: 60px;
+    width: auto;
+    margin: 0 20px;
+  }
+
+  .main-allies .imgbox {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .main-allies .imgbox img {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 4s linear infinite;
+  }
+
+  .main-allies .imgbox #splash3 {
+    z-index: -1;
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    filter: saturate(200%);
+    animation: animateSplash 4s linear infinite;
+  }
+
+  @keyframes animateSplash {
+    50% {
+      top: 37%;
+      left: 37%;
+      width: 105%;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .main-allies .imgbox {
+      width: 45%;
+    }
+
+    .allies-text {
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 785px) {
+    .main-allies {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .main-allies .imgbox {
+      width: 50%;
+    }
+
+    .allies-text {
+      max-width: 70%;
+      margin-bottom: 140px;
+    }
+
+    .allies-text h2 {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .allies-text h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 475px) {
+    .main-allies .imgbox {
+      width: 70%;
+    }
+
+    .allies-text {
+      max-width: 70%;
+    }
+  }
+</style>

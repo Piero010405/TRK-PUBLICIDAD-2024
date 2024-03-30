@@ -1,0 +1,255 @@
+.whatsapp_chat_support {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .whatsapp_chat_support button{
+    border: none;
+    display: inline-block;
+  }
+
+  .wcs_button {
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px 18px;
+    border-radius: 50px;
+    background: #26c281;
+    color: #fff;
+    display: inline-block;
+    margin-right: 3px;
+    cursor: pointer;
+
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  .wcs_button .fa {
+    font-size: 15px;
+    margin-right: 3px;
+  }
+
+  .wcs_button_circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding: 0;
+  }
+
+  .wcs_button_circle .fa {
+    line-height: 50px;
+    font-size: 30px;
+    margin-right: 0px;
+  }
+
+  .wcs_button_label {
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: #d4f3e6;
+    padding: 5px 10px;
+    border-radius: 4px;
+
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+  }
+
+  
+
+  .wcs_button_label_hide {
+    -webkit-transform: translate(10px, 0);
+    -moz-transform: translate(10px, 0);
+    -ms-transform: translate(10px, 0);
+    transform: translate(10px, 0);
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .wcs_fixed_right {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .wcs_popup {
+    position: absolute;
+    width: 300px;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 20px;
+    visibility: hidden;
+    max-width: calc(100vw - 60px);
+  }
+
+  .wcs_popup_close {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    cursor: pointer;
+
+    opacity: 0.8;
+    color: #fff;
+    font-size: 20px;
+
+    -webkit-transition: all 0.08s ease-in-out;
+    -moz-transition: all 0.08s ease-in-out;
+    transition: all 0.08s ease-in-out;
+  }
+
+  .wcs_popup_close:hover {
+    opacity: 1;
+  }
+
+  .wcs_popup_header {
+    padding: 5px 20px;
+    background: #26c281;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    color: #fff;
+    text-align: center;
+
+    -webkit-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -moz-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -o-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -ms-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+  }
+
+  .wcs_popup_header strong{
+    font-size: 1.2rem;
+  }
+
+  .wcs_popup_header .fa-whatsapp {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: .1rem;
+  }
+
+  .wcs_popup_header_description {
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .wcs_popup_input {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: #fff;
+    padding: 10px 10px;
+
+    -webkit-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -moz-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -o-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    -ms-box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    box-shadow: 0 4px 8px 1px rgba(43, 43, 43, 0.15);
+    display: flex;
+  }
+
+  .wcs_popup_input input {
+    border: 0;
+    outline: none;
+    width: 90%;
+    color: #555555;
+    align-items: center;
+  }
+
+  .wcs_popup_input input::placeholder {
+    color: #cfcfcf;
+    font-size: 1rem;
+  }
+
+  .wcs_popup_input > * {
+    vertical-align: top;
+  }
+
+  .wcs_popup_input .fa {
+    font-size: 20px;
+    color: #9da3a5;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .wcs_popup_avatar {
+    overflow: hidden;
+    position: absolute;
+    left: -70px;
+    bottom: -4px;
+  }
+
+  .wcs_popup_avatar img {
+    border-radius: 50%;
+    border: 2px solid #26c281;
+    display: block;
+    height: 50px;
+    width: 50px;
+
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .wcs_popup_input_offline {
+    color: #f1a528;
+  }
+
+  .wcs_popup_input_offline + .wcs_popup_avatar {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+
+  @media only screen and (max-width: 400px) {
+    .wcs_popup_avatar {
+      display: none;
+    }
+
+    .wcs_button_label {
+      display: none;
+    }
+  }
+
+  .wcs-show .wcs_popup {
+    visibility: visible;
+  }
+
+  .wcs-effect-1 .wcs_popup {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .wcs-show.wcs-effect-1 .wcs_popup {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .wcs_debug {
+    position: fixed;
+    padding: 10px;
+    background: white;
+    border: 1px solid #dadada;
+    top: 5px;
+    right: 5px;
+  }
+
+  .wcs_debug strong {
+    width: 125px;
+    display: inline-block;
+  }

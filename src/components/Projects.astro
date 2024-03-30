@@ -1,0 +1,170 @@
+---
+import { Image } from 'astro:assets'
+import sw1IMG from '../../public/img/sw1.avif'
+import sw2IMG from '../../public/img/sw2.avif'
+import sw3IMG from '../../public/img/sw3.avif'
+import sw4IMG from '../../public/img/sw4.avif'
+import sw5IMG from '../../public/img/sw5.avif'
+import sw6IMG from '../../public/img/sw6.avif'
+import sw7IMG from '../../public/img/sw7.avif'
+---
+
+<section class='projects' id='projects'>
+  <div>
+    <h2>Últimos Proyectos</h2>
+  </div>
+  <div class='gallery'>
+    <div>
+      <Image
+        src={sw1IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 1'
+      />
+    </div>
+    <div class='h-stretch'>
+      <Image
+        src={sw2IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 2'
+      />
+    </div>
+    <div>
+      <Image
+        src={sw3IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 3'
+      />
+    </div>
+    <div class='h-stretch'>
+      <Image
+        src={sw4IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 4'
+      />
+    </div>
+    <div class='v-stretch'>
+      <Image
+        src={sw5IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 5'
+      />
+    </div>
+    <div class='v-stretch'>
+      <Image
+        src={sw6IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 6'
+      />
+    </div>
+    <div class='h-stretch'>
+      <Image
+        src={sw7IMG}
+        alt=''
+        format='avif'
+        quality={'mid'}
+        alt='galery image 7'
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: 0;
+    margin: 0;
+  }
+
+  .projects h2 {
+    text-align: center;
+    padding-top: 10%;
+    color: var(--footer-color);
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .projects h2::after {
+    position: absolute;
+    content: '';
+    background-color: var(--third-color);
+    width: 15%;
+    height: 5px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gallery {
+    padding: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    flex: none;
+  }
+
+  .gallery div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+
+  .gallery div img:hover {
+    transform: scale(0.9);
+  }
+
+  /*vertical*/
+  .v-stretch {
+    grid-row: span 2;
+  }
+
+  /*horizontal*/
+  .h-stretch {
+    grid-column: span 2;
+  }
+
+  /*vertical-horizontal*/
+  .big-stretch {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  @media (max-width: 600px) {
+    .projects h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .v-stretch {
+      grid-row: span 1;
+    }
+
+    .h-stretch {
+      grid-column: span 1;
+    }
+
+    .big-stretch {
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+  }
+</style>
