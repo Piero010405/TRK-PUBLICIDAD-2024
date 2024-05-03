@@ -1,28 +1,28 @@
 ---
 interface Props {
-  title: string;
+  title: string
 }
 
-import NavBar from "../components/NavBar.astro";
-import Footer from "../components/Footer.astro";
-import { WhatsAppButton } from "../components/WhatsAppButton.jsx";
+import NavBar from '../components/NavBar.astro'
+import Footer from '../components/Footer.astro'
+import { WhatsAppButton } from '../components/WhatsAppButton.jsx'
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="TRK Publicidad" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/trkcon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='description' content='TRK Publicidad' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/trkcon.svg' />
+    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+      rel='stylesheet'
+      href='https://unicons.iconscout.com/release/v4.0.8/css/line.css'
     />
   </head>
   <body>
@@ -35,7 +35,7 @@ const { title } = Astro.props;
 
 <style is:global>
   @charset "UTF-8";
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
   :root {
     --primary-color: #f54748;
     --secondary-color: #f48924;
@@ -83,7 +83,7 @@ const { title } = Astro.props;
     --scroll-thumb-color: #282f4e;
     --scroll-thumb-hover-color: #454f6b;
 
-    --font-poppins: "Poppins", system-ui, sans-serif;
+    --font-poppins: 'Poppins', system-ui, sans-serif;
 
     --shadow-color: 216deg 8% 60%;
     --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
@@ -137,6 +137,11 @@ const { title } = Astro.props;
 
   .hidden {
     overflow: hidden;
+  }
+
+  .orange {
+    color: var(--fourth-color);
+    font-weight: 900;
   }
 
   /* @keyframes reveal {
